@@ -6,7 +6,7 @@
 	"scripts": {
 		"lint": "prettier --write src/ test/",
 		"test": "mocha || true",
-		"validate": "npm-run-all --parallel lint test && npm run generateCommandsFile",
+		"validate": "npm-run-all --parallel lint test && npm run generateCommandsFile && git add ./src/",
 		"commit": "git-cz",
 		"generateCommandsFile": "node . generateCommandsFile",
 		"install": "npm run generateCommandsFile"

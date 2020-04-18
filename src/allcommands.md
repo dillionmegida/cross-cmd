@@ -4,12 +4,12 @@
 
 ### 'readfile'
 
--   win32: 'type'
+- win32: 'type'
 
--   linux: 'cat'
+- linux: 'cat'
 
 ### 'mkdir'
 
--   win32: 'mkdir'
+- win32: 'mkdir'
 
--   linux: 'mkdir'
+- linux: 'mkdir'
