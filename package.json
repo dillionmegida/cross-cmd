@@ -1,0 +1,51 @@
+{
+	"name": "cross-cmd",
+	"version": "0.0.0-semantically-released",
+	"description": "Cross-platform CLI commands",
+	"main": "src/index.js",
+	"scripts": {
+		"lint": "prettier --write src/ test/",
+		"test": "mocha || true",
+		"validate": "npm-run-all --parallel lint test && npm run generateCommandsFile",
+		"commit": "git-cz",
+		"generateCommandsFile": "node . generateCommandsFile",
+		"install": "npm run generateCommandsFile"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/dillionmegida/cross-cmd.git"
+	},
+	"keywords": [
+		"cli",
+		"cross-cli",
+		"unix",
+		"win32",
+		"cross-commands",
+		"cross-platform"
+	],
+	"author": "Dillion Megida <dillionmegida@gmail.com>",
+	"license": "MIT",
+	"files": [
+		"src"
+	],
+	"bugs": {
+		"url": "https://github.com/dillionmegida/cross-cmd/issues"
+	},
+	"homepage": "https://github.com/dillionmegida/cross-cmd#readme",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"commitizen": "^4.0.4",
+		"mocha": "^7.1.1",
+		"prettier": "^2.0.4",
+		"validate-commit-msg": "^2.14.0"
+	},
+	"config": {
+		"ghooks": {
+			"pre-commit": "npm run validate",
+			"commit-msg": "validate-commit-msg"
+		},
+		"commitizen": {
+			"path": "node_modules/cz-conventional-changelog"
+		}
+	}
+}
