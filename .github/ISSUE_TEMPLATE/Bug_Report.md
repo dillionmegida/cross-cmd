@@ -1,5 +1,10 @@
 ---
-name: 🐛 Bug Report
+name: "\U0001F41B Bug Report"
+about: Found any bug, please make a report
+title: ''
+labels: ''
+assignees: dillionmegida
+
 ---
 
 <!--
