@@ -3,12 +3,12 @@ const commands = require("../src/commands");
 
 describe("Commands", function () {
 	describe("each command", function () {
-		it("should have properties included in ['aix', 'darwin', 'freebsd', 'linux', 'openbsd', 'sunos', 'win32']", function () {
+		it("should have properties included in ['aix', 'darwin', 'freebsd', 'linux', 'openbsd', 'sunos', 'win32', 'desc']", function () {
 			// ['aix', 'darwin', 'freebsd', 'linux', 'openbsd', 'sunos', and 'win32'] collection is from
 			// https://nodejs.org/api/os.html#os_os_platform
 
-			for (let command in commands) {
-				for (let property in commands[command]) {
+			commands.forEach((command) => {
+				for (let property in command) {
 					assert.include(
 						[
 							"aix",
@@ -18,20 +18,21 @@ describe("Commands", function () {
 							"openbsd",
 							"sunos",
 							"win32",
+							"desc",
 						],
 						property
 					);
 				}
-			}
+			});
 		});
 		it("should have properties whose values are non-empty strings", function () {
-			for (let command in commands) {
+			commands.forEach((command) => {
 				for (let property in commands[command]) {
 					const value = commands[command][property];
 					assert.typeOf(value, "string");
 					assert.isAbove(value.length, 0);
 				}
-			}
+			});
 		});
 	});
 });
