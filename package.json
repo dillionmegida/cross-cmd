@@ -2,14 +2,15 @@
 	"name": "cross-cmd",
 	"version": "0.0.0-semantically-released",
 	"description": "Cross-platform CLI commands",
-	"main": "src/index.js",
+	"main": "./bin/index.js",
 	"scripts": {
 		"lint": "prettier --write src/ test/",
 		"test": "mocha || true",
 		"validate": "npm-run-all --parallel lint test && npm run generateCommandsFile && git add ./src/",
 		"commit": "git-cz",
 		"generateCommandsFile": "node . generateCommandsFile",
-		"install": "npm run generateCommandsFile"
+		"install": "npm run generateCommandsFile",
+		"release": "semantic-release"
 	},
 	"repository": {
 		"type": "git",
@@ -26,8 +27,12 @@
 	"author": "Dillion Megida <dillionmegida@gmail.com>",
 	"license": "MIT",
 	"files": [
-		"src"
-	],
+		"src",
+		"bin"
+    ],
+    "bin": {
+		"cross-cmd": "./bin/index.js"
+	},
 	"bugs": {
 		"url": "https://github.com/dillionmegida/cross-cmd/issues"
 	},
@@ -35,8 +40,10 @@
 	"devDependencies": {
 		"chai": "^4.2.0",
 		"commitizen": "^4.0.4",
+		"cz-conventional-changelog": "^3.1.0",
 		"mocha": "^7.1.1",
 		"prettier": "^2.0.4",
+		"semantic-release": "^17.0.6",
 		"validate-commit-msg": "^2.14.0"
 	},
 	"config": {
