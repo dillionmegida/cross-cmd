@@ -10,11 +10,11 @@
 		"commit": "git-cz",
 		"generateCommandsFile": "node . generateCommandsFile",
 		"install": "npm run generateCommandsFile",
-		"release": "semantic-release"
+		"semantic-release": "semantic-release"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/dillionmegida/cross-cmd.git"
+		"url": "https://github.com/dillionmegida/cross-cmd.git"
 	},
 	"keywords": [
 		"cli",
